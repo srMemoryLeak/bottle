@@ -1,0 +1,99 @@
+@font-face {
+    font-family: Comic-SanS;
+    src: url("./comic.ttf");
+}       
+
+@font-face {
+    font-family: Katong;
+    src: url("./katong.ttf");
+} 
+body{
+    position: relative;
+    width: 772px;
+}
+h1{
+    text-align: center;
+    font-family: Comic-Sans, Katong;
+}
+
+#nl_table{
+    
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.caption{
+    position:absolute;
+    width: 101%;
+    height: 41px;
+    bottom: 0px;
+    text-align: center;
+    font-family: Comic-Sans,Katong;
+    font-size:20px;
+    z-index: 2;
+    background-color: white;
+}
+#bottle{
+    position: absolute;
+    z-index: 100;
+}
+#surface{
+    top:100px;
+    position: absolute;
+    z-index: 1;
+}
+.block{
+    position: relative;
+    height: 180px;
+    width: 120px;
+}
+
+.surface{
+    position: absolute;
+    bottom:1px;
+    left: 1px;
+    height: 28%;
+    width: 90%;
+    background-color: aqua;
+}
+
+#img{
+    top:20px;
+    position: relative;
+}
+
+
+#colorList{
+    position: relative;
+    top:20px;
+    margin-left: 20px;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.colorlist{
+    position: relative;
+    border-spacing: 20px;
+    height: 50px;
+}
+
+.colorbox{
+    height: 100%;
+    width: 50px;
+}
+
+#loadingblock{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: grey;
+    z-index: 2000;
+}
+
+#loadinghint{
+    position: absolute;
+    top: 20%;
+    opacity: 100%;
+    font-size: 50px;
+}

@@ -44,7 +44,7 @@ h1{
 }
 .block{
     position: relative;
-    height: 180px;
+    height: 200px;
     width: 120px;
 }
 
@@ -52,8 +52,8 @@ h1{
     position: absolute;
     bottom:1px;
     left: 1px;
-    height: 28%;
-    width: 90%;
+    height: 26%;
+    width: 98%;
     background-color: aqua;
 }
 

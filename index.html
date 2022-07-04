@@ -5,35 +5,39 @@
         <link href="main.css" type="text/css" rel="stylesheet">
         <script type="text/javascript" src="main.js"></script>
         <script type="text/javascript" src="html2canvas.min.js"></script>
+        <script type="text/javascript" src="calcdata.js"></script>
     </head>
     <body>
         <div id="loadingblock">
             <div id="loadinghint">正在加载中，请稍后。。。。</div>
         </div>
-        <div id="btnList">
-            <table class="colorlist">
-                <tbody>
-                    <tr height="50px">
-                        <td style="font-size: 32px;font-family:Katong">颜色选择：</td>
-                        <td class="colorbox" style="background-color:royalblue" onclick="changeColor('royalblue');"></td>
-                        <td class="colorbox" style="background-color:lightskyblue" onclick="changeColor('lightskyblue');"></td>
-                        <td class="colorbox" style="background-color:navy" onclick="changeColor('navy');"></td>
-                        <td class="colorbox" style="background-color:aqua" onclick="changeColor('aqua');"></td>
-                        <td class="colorbox" style="background-color:aquamarine" onclick="changeColor('aquamarine');"></td>
-                        <td class="colorbox" style="background-color:lightgreen" onclick="changeColor('lightgreen');"></td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="colorlist">
-
-                <tbody>
-                    <tr height="50px">
-                        <td width="500px" style="font-size: 32px;font-family:Katong">使用注意事项：<br><br>1. 点击选择喜欢的颜色<br><br>2. 点击瓶子，进行涂色<br><br>3. 点击最后一个瓶子的括号，可以自由填写没有写到的xp哦<br><br>4. 点击生成图片，即可下载！</td>
-                        <td style="font-size: 32px;" width="200px"><button style="height:300px;font-family:Katong;font-size:32px;" onclick="screenshot()">生成图片</button></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="title">
+            <span>ML的尿恋性癖生成器</span>
         </div>
+        <div id="btnList">
+            <div class="ct">
+                <table class="tablebox">
+
+                    <tbody>
+                        <tr height="50px">
+                            <td width="500px" style="font-size: 32px;font-family:Katong">使用注意事项：<br><br>1. 点击选择喜欢的颜色<br><br>2. 点击瓶子，进行涂色<br><br>3. 点击最后一个瓶子的括号，可以自由填写没有写到的xp哦<br><br>4. 点击生成图片，即可下载！</td>
+                            <td style="font-size: 32px;" width="200px"><button id="downloadBtn" onclick="screenshot()">生成图片</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="ct">
+                <div id="cthint">
+                    <span>颜色选择：</span>
+                </div>
+                <table class="tablebox">
+                    <tbody id="colorlist_tbody">
+    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="ct">
         <div id="img">
             <h1>性癖瓶子&nbsp;&nbsp;&nbsp;&nbsp; ~尿恋Ver.~&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Created By ML</h1>
             <table id="nl_table">
@@ -293,6 +297,14 @@
                                                                                                                                         
                 </tbody>
             </table>
+        </div>
+    </div>
+    <div class="title">
+        <a style="color:black;margin-top:10px;" href="https://www.shireyishunjian.com/main/home.php?mod=space&uid=363505">ML的论坛主页（点此进入）</a>
+    </div>
+
+        <div id="st">
+
         </div>
     </body>
 </html>

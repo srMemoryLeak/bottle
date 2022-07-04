@@ -1,7 +1,3 @@
-window.onload = function(){
-    loadingbox = document.getElementById("loadingblock");
-    loadingbox.remove();
-}
 
 function add(id){
     surface = document.getElementById(id)
@@ -50,4 +46,69 @@ function fill(){
         str="(______)"
     }
     lastcaption.innerText = str;
+}
+
+function addColor(){
+    colorList=[
+        //blue
+        "navy",
+        "DarkBlue ",
+        "royalblue",
+        "SlateBlue",
+        "steelblue",
+        "lightskyblue",
+        "LightSteelBlue",
+        "PaleTurquoise",
+        "aqua",
+        "DarkSlateGray",
+        //green
+        "aquamarine",
+        "LightSeaGreen",
+        "lightgreen",
+        "olivedrab",
+        "LightGreen",
+        "SeaGreen",
+        "Teal",
+        "YellowGreen",
+        "LimeGreen",
+        "Green",
+        //other
+        "coral",
+        "darkorange",
+        "firebrick",
+        "indianred",
+        "Salmon",
+        "BurlyWood",
+        "Khaki ",
+        "PaleVioletRed",
+        "Plum",
+        "pink",
+    ]
+    var row_cnt=10;
+    var curList=null;
+    for(var i=0;i<colorList.length;i++){
+        if(i%row_cnt==0){
+            curList = document.createElement("tr");
+            curList.setAttribute("height","50px");
+            document.getElementById("colorlist_tbody").appendChild(curList)
+        }
+        var color = colorList[i];
+        colortd = document.createElement("td");
+        colorbox = document.createElement("div");
+        colortd.appendChild(colorbox)
+        colorbox.setAttribute("class","colorbox");
+        colorbox.setAttribute("style","background-color:"+color);
+        colorbox.setAttribute("onclick","changeColor('"+color+"');");
+        curList.appendChild(colortd);
+    }
+
+}
+
+
+window.onload = function(){
+    loadingbox = document.getElementById("loadingblock");
+    loadingbox.remove();
+    stBox = document.getElementById("st");
+    stBox.innerText = "本页面已被访问  " + visits + "  次。";
+    addColor();
 }

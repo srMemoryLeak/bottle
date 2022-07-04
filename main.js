@@ -108,7 +108,5 @@ function addColor(){
 window.onload = function(){
     loadingbox = document.getElementById("loadingblock");
     loadingbox.remove();
-    stBox = document.getElementById("st");
-    stBox.innerText = "本页面已被访问  " + visits + "  次。";
     addColor();
 }

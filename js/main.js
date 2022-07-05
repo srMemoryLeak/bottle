@@ -105,6 +105,10 @@ function addColor(){
 }
 
 
+function switchto (key) {
+    location.href = key +".html";
+}
+
 window.onload = function(){
     loadingbox = document.getElementById("loadingblock");
     loadingbox.remove();

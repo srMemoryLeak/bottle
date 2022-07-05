@@ -10,6 +10,7 @@
 body{
     position: relative;
     font-family: Comic-Sans, Katong;
+    background-color: white;
     width: 800px;
 }
 h1{

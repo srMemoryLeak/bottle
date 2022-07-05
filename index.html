@@ -1,10 +1,10 @@
 <html>
     <head>
         <meta charset="utf8">
-        <title>尿恋XP瓶子 By ML</title>
-        <link href="main.css" type="text/css" rel="stylesheet">
-        <script type="text/javascript" src="main.js"></script>
-        <script type="text/javascript" src="html2canvas.min.js"></script>
+        <title>湿热XP瓶子 By ML</title>
+        <link href="./css/main.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript" src="./js/main.js"></script>
+        <script type="text/javascript" src="./js/html2canvas.min.js"></script>
     </head>
     <body>
         <div id="loadingblock">
@@ -13,297 +13,31 @@
         <div class="title">
             <span>ML的尿恋性癖瓶子生成器</span>
         </div>
-        <div id="btnList">
-            <div class="ct">
-                <table class="tablebox">
-
-                    <tbody>
-                        <tr height="50px">
-                            <td width="500px" style="font-size: 32px;font-family:Katong">使用注意事项：<br><br>1. 点击选择喜欢的颜色<br><br>2. 点击瓶子，进行涂色<br><br>3. 点击最后一个瓶子的括号，可以自由填写没有写到的xp哦<br><br>4. 点击生成图片，即可下载！</td>
-                            <td style="font-size: 32px;" width="200px"><button id="downloadBtn" onclick="screenshot()">生成图片</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="ct">
-                <div id="cthint">
-                    <span>颜色选择：</span>
-                </div>
-                <table class="tablebox">
-                    <tbody id="colorlist_tbody">
-    
-                    </tbody>
-                </table>
-            </div>
-        </div>
         <div class="ct">
-        <div id="img">
-            <h1>性癖瓶子&nbsp;&nbsp;&nbsp;&nbsp; ~尿恋Ver.~&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Created By ML</h1>
-            <table id="nl_table">
-                <tbody>
-                    
-                    <tr>
-
-                        <td>
-                            <div class="block">
-                            <div id="surface0" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface0');">
-                            <div class="caption">失禁</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface1" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface1');">
-                            <div class="caption">尿布</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface2" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface2');">
-                            <div class="caption">尿床</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface3" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface3');">
-                            <div class="caption">故意失禁</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface4" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface4');">
-                            <div class="caption">户外失禁</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface5" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface5');">
-                            <div class="caption">高潮失禁</div>
-                            </div>
-                        </td> 
-                        </tr>
+            <div id="cthint">
+                <span>请选择分区：</span>
+            </div>
+                <table style="width:100%;margin-top:20px;margin-bottom:20px;">
+                    <tbody>
                         <tr>
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface6" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface6');">
-                            <div class="caption">憋尿</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface7" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface7');">
-                            <div class="caption">极限憋尿</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface8" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface8');">
-                            <div class="caption">排泄控制</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface9" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface9');">
-                            <div class="caption">放尿时回憋</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface10" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface10');">
-                            <div class="caption">捆绑憋尿</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface11" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface11');">
-                            <div class="caption">憋尿时edge</div>
-                            </div>
-                        </td> 
+                            <td>
+                                <div class="xps" onclick="switchto('7');">
+                                    尿恋区
+                                </div>
+                            </td>
+                            <td>
+                                <div class="xps" onclick="switchto('85');">
+                                    AB|DL区
+                                </div>
+                            </td>
+                            <td>
+                                <div class="xps" onclick="switchto('87');">
+                                    裤兜区
+                                </div>
+                            </td>
                         </tr>
-                        <tr>
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface12" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface12');">
-                            <div class="caption">喝尿</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface13" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface13');">
-                            <div class="caption">幼儿化</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface14" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface14');">
-                            <div class="caption">小腹的隆起</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface15" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface15');">
-                            <div class="caption">虐小腹</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface16" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface16');">
-                            <div class="caption">测容量</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface17" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface17');">
-                            <div class="caption">模拟排尿</div>
-                            </div>
-                        </td> 
-                        </tr>
-                        <tr>
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface18" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface18');">
-                            <div class="caption">放尿</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface19" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface19');">
-                            <div class="caption">极限放尿</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface20" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface20');">
-                            <div class="caption">野外放尿</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface21" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface21');">
-                            <div class="caption">强制放尿</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface22" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface22');">
-                            <div class="caption">容器放尿</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface23" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface23');">
-                            <div class="caption">裸体放尿</div>
-                            </div>
-                        </td> 
-                        </tr>
-                        <tr>
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface24" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface24');">
-                            <div class="caption">牛仔裤</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface25" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface25');">
-                            <div class="caption">女仆装</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface26" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface26');">
-                            <div class="caption">舞蹈服</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface27" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface27');">
-                            <div class="caption">JK</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface28" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface28');">
-                            <div class="caption">lolita</div>
-                            </div>
-                        </td> 
-                        
-                        <td>
-                            <div class="block">
-                            <div id="surface29" class="surface"></div>
-                            <img crossOrigin="Anonymous", id="bottle" src="bottle.png"  onclick="add('surface29');">
-                            <div class="caption" id="lastcaption" onclick="fill()">(______)</div>
-                            </div>
-                        </td> 
-                        </tr>
-                        
-                                                                                                                                        
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="title">
-        <a style="color:black;margin-top:10px;" href="https://www.shireyishunjian.com/main/home.php?mod=space&uid=363505">ML的论坛主页（点此进入）</a>
-    </div>
-
-        <div id="st">
-
+                    </tbody>
+                </table>
         </div>
     </body>
 </html>

@@ -1,15 +1,12 @@
 
 function add(id){
-    surface = document.getElementById(id)
-    //console.log(id);
-    var height = surface.style.height
-    var cur = parseInt(height.substring(0,height.length-1)); 
-    if(isNaN(cur))cur=27;
-    console.log(cur);
-    cur += 10;
-    if(cur>100)cur=27;
-    if(cur>=80)cur=98;
-    surface.style.height = cur+"%";
+    surface = document.getElementById(id);
+    var heightList=[26, 37, 47, 57, 67, 76.4, 98];
+    var hidx = parseInt( surface.getAttribute("hidx"));
+    console.log(hidx);
+    hidx = (hidx+1)%heightList.length;
+    surface.setAttribute("hidx",hidx);
+    surface.style.height = heightList[hidx]+"%";
 }
 
 function changeColor(color){

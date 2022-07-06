@@ -3,7 +3,7 @@ import sys
 temp='''
 <td>
     <div class="block">
-    <div id="surface%d" class="surface"></div>
+    <div id="surface%d" class="surface" hidx=0></div>
     <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface%d');">
     <div class="caption">%s</div>
     </div>

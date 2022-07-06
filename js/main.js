@@ -4,10 +4,10 @@ function add(id){
     //console.log(id);
     var height = surface.style.height
     var cur = parseInt(height.substring(0,height.length-1)); 
-    if(isNaN(cur))cur=28;
+    if(isNaN(cur))cur=27;
     console.log(cur);
     cur += 10;
-    if(cur>100)cur=26;
+    if(cur>100)cur=27;
     if(cur>=80)cur=98;
     surface.style.height = cur+"%";
 }

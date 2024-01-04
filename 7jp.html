@@ -1,0 +1,328 @@
+<html>
+    <head>
+        <meta charset="utf8">
+        <title>性癖ボトル尿関連Ver.~ By ML</title>
+        <meta name="keywords" content="尿恋XP瓶子生成器 By ML">
+        <meta name="description" content="点点屏幕，即可生成属于自己的尿恋性癖瓶子图！">
+        <link href="./css/main.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript" src="./js/main.js"></script>
+        <script type="text/javascript" src="./js/html2canvas.min.js"></script>
+    </head>
+    <body>
+        <div id="loadingblock">
+            <div id="loadinghint">お待ちください。。。</div>
+        </div>
+        <div class="title">
+            <span>MLの性癖ボトル（尿関連Ver）</span>
+        </div>
+        <div class="ct">
+            <div id="ctotherhint">
+                <span>请选择分区：</span>
+            </div>
+            <table style="width:100%;margin-top:5px;margin-bottom:10px;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="other_xp" onclick="switchto('7');">
+                                尿
+                            </div>
+                        </td>
+                        <td>
+                            <div class="other_xp" onclick="switchto('85');">
+                                TBD
+                            </div>
+                        </td>
+                        <td>
+                            <div class="other_xp" onclick="switchto('87');">
+                                TBD
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="btnList">
+            <div class="ct">
+                <table class="tablebox">
+
+                    <tbody>
+                        <tr height="50px">
+                            <td width="500px" style="font-size: 32px;font-family:Katong">作り方：<br><br>1. 好きな色を選ぶ<br><br>2. 気になるボトルをクリックする<br><br>3. 最後のボトルの下の(______)をクリックして、「好きだけどいない」性癖を入ってください<br><br>4. 「生成」をクリックして完成！</td>
+                            <td style="font-size: 32px;" width="200px"><button id="downloadBtn" onclick="screenshot()">生成</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="ct">
+                <div id="cthint">
+                    <span>まず好きな色を選んでください～</span>
+                </div>
+                <table class="tablebox">
+                    <tbody id="colorlist_tbody">
+    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="ct">
+        <div id="img">
+            <h1>性癖ボトル&nbsp;&nbsp;&nbsp;&nbsp; ~尿関連Ver.~&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Created By ML</h1>
+            <table id="nl_table">
+                <tbody>
+                    <tr>
+
+                        <td>
+                            <div class="block">
+                            <div id="surface0" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface0');">
+                            <div class="caption">おもらし</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface1" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface1');">
+                            <div class="caption">おむつ</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface2" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface2');">
+                            <div class="caption">おねしょ</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface3" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface3');">
+                            <div class="caption">わざとおもらし</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface4" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface4');">
+                            <div class="caption">外でおもらし</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface5" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface5');">
+                            <div class="caption">オナニでおもらし</div>
+                            </div>
+                        </td> 
+                        </tr>
+                        <tr>
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface6" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface6');">
+                            <div class="caption">おしがま</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface7" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface7');">
+                            <div class="caption">限界おしがま</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface8" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface8');">
+                            <div class="caption">おしがま指示</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface9" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface9');">
+                            <div class="caption">お風呂におしがま</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface10" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface10');">
+                            <div class="caption">拘束おしがま</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface11" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface11');">
+                            <div class="caption">オナニでおしがま</div>
+                            </div>
+                        </td> 
+                        </tr>
+                        <tr>
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface12" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface12');">
+                            <div class="caption">飲尿</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface13" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface13');">
+                            <div class="caption">幼儿化</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface14" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface14');">
+                            <div class="caption">お腹の膨らみ</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface15" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface15');">
+                            <div class="caption">お腹を押す</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface16" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface16');">
+                            <div class="caption">尿量を測定</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface17" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface17');">
+                            <div class="caption">便器でおしがま</div>
+                            </div>
+                        </td> 
+                        </tr>
+                        <tr>
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface21" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface21');">
+                            <div class="caption">放尿</div>
+                            </div>
+                        </td> 
+                    
+                        <td>
+                            <div class="block">
+                            <div id="surface18" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface18');">
+                            <div class="caption">立ション</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface20" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface20');">
+                            <div class="caption">野ション</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface19" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface19');">
+                            <div class="caption">限界放尿</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface22" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface22');">
+                            <div class="caption">容器で放尿</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface23" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface23');">
+                            <div class="caption">全裸に放尿</div>
+                            </div>
+                        </td> 
+                        </tr>
+                        <tr>
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface24" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface24');">
+                            <div class="caption">ジーンズ</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface25" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface25');">
+                            <div class="caption">メイド服</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface26" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="img/bottle.png"  onclick="add('surface26');">
+                            <div class="caption">ブルマー</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface27" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface27');">
+                            <div class="caption">JK服</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface28" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface28');">
+                            <div class="caption">ロリィタ</div>
+                            </div>
+                        </td> 
+                        
+                        <td>
+                            <div class="block">
+                            <div id="surface29" class="surface" hidx=0></div>
+                            <img crossOrigin="Anonymous", id="bottle" src="./img/bottle.png"  onclick="add('surface29');">
+                            <div class="caption" id="lastcaption" onclick="fill();">(______)</div>
+                            </div>
+                        </td> 
+                        </tr>
+                                                                                                                                 
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </body>
+</html>

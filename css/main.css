@@ -4,14 +4,40 @@
 }       
 
 @font-face {
+    font-family: Katongjp;
+    src: url("../font/ZenMaruGothic-Medium.ttf");
+} 
+
+@font-face {
     font-family: Katong;
-    src: url("../font/katong2.ttc");
+    src: url("../font/katong.ttf");
 } 
 body{
     position: relative;
-    font-family: Comic-Sans, Katong;
     background-color: white;
     width: 800px;
+}
+.jp{
+    font-family: Comic-Sans, Katongjp;
+}
+.cn{
+    font-family: Comic-Sans, Katong;
+}
+.lang{
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: whitesmoke;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 6px;
+    border-color: black;
+    margin: auto;
 }
 h1{
     text-align: center;

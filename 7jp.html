@@ -8,12 +8,30 @@
         <script type="text/javascript" src="./js/main.js"></script>
         <script type="text/javascript" src="./js/html2canvas.min.js"></script>
     </head>
-    <body>
+    <body class="jp">
         <div id="loadingblock">
             <div id="loadinghint">お待ちください。。。</div>
         </div>
         <div class="title">
             <span>MLの性癖ボトル（尿関連Ver）</span>
+        </div>
+        <div class="ct">
+                <table style="width:100%;margin-top:20px;margin-bottom:20px;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="lang cn" onclick="switchto('7');">
+                                    中文
+                                </div>
+                            </td>
+                            <td>
+                                <div class="lang jp" onclick="switchto('7jp');">
+                                    日本語
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
         </div>
         <div class="ct">
             <div id="ctotherhint">
@@ -47,7 +65,10 @@
 
                     <tbody>
                         <tr height="50px">
-                            <td width="500px" style="font-size: 32px;font-family:Katong">作り方：<br><br>1. 好きな色を選ぶ<br><br>2. 気になるボトルをクリックする<br><br>3. 最後のボトルの下の(______)をクリックして、「好きだけどいない」性癖を入ってください<br><br>4. 「生成」をクリックして完成！</td>
+                            <td width="500px" style="font-size: 32px">作り方：<br>
+                                <br>1. 好きな色を選ぶ<br>
+                                <br>2. 気になるボトルをクリックする<br>
+                                <br>3. 最後のボトルの下の(______)をクリックして、「好きだけどいない」性癖を入ってください<br><br>4. 「生成」をクリックして完成！</td>
                             <td style="font-size: 32px;" width="200px"><button id="downloadBtn" onclick="screenshot()">生成</button></td>
                         </tr>
                     </tbody>

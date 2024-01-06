@@ -38,7 +38,7 @@ function screenshot(){
 
 function fill(){
     lastcaption = document.getElementById("lastcaption");
-    var str = prompt("请填写这个瓶子吧~");
+    var str = prompt("すきな性癖を入りましょう~");
     if(str.length==0){
         str="(______)"
     }

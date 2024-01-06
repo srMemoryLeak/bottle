@@ -188,3 +188,7 @@ h1{
     border-color: black;
     margin: auto;
 }
+h2{
+    text-align: right;
+    margin-right: 5%;
+}

@@ -37,8 +37,9 @@ var currentPart = "7"; // 当前分区键（对应 xp_list 的键）
 var bottleCount = 0;   // 已创建的瓶子总数（用于生成唯一 id）
 var deleteMode = false; // 删除模式开关
 
-// 创建一个瓶子块，返回其 DOM 元素
-function createBottle(xp, id){
+// 创建一个瓶子块，返回其 DOM 元素。
+// isQR 为 true 时创建"二维码瓶子"：图片为二维码、无液体、无删除按钮
+function createBottle(xp, id, isQR){
     var block = document.createElement("div");
     block.setAttribute("class","block");
 
@@ -46,20 +47,26 @@ function createBottle(xp, id){
     var wrap = document.createElement("div");
     wrap.setAttribute("class","bottle-wrap");
 
-    var surface = document.createElement("div");
-    surface.setAttribute("id", id);
-    surface.setAttribute("class","surface");
-    surface.setAttribute("hidx","0");
-    wrap.appendChild(surface);
+    if(!isQR){
+        var surface = document.createElement("div");
+        surface.setAttribute("id", id);
+        surface.setAttribute("class","surface");
+        surface.setAttribute("hidx","0");
+        wrap.appendChild(surface);
+    }
 
     var img = document.createElement("img");
     img.setAttribute("class","bottle");
     img.setAttribute("crossOrigin","Anonymous");
-    img.setAttribute("src","./img/bottle.png");
-    //img.setAttribute("title","点击调整液体高度");
-    img.setAttribute("data-bs-toggle","tooltip");
-    img.setAttribute("data-bs-placement","top");
-    img.setAttribute("onclick","add('"+id+"');");
+    if(isQR){
+        img.setAttribute("src","./img/qrcode.png");
+    }else{
+        img.setAttribute("src","./img/bottle.png");
+        //img.setAttribute("title","点击调整液体高度");
+        img.setAttribute("data-bs-toggle","tooltip");
+        img.setAttribute("data-bs-placement","top");
+        img.setAttribute("onclick","add('"+id+"');");
+    }
     wrap.appendChild(img);
 
     block.appendChild(wrap);
@@ -70,13 +77,17 @@ function createBottle(xp, id){
     caption.innerText = xp;
     block.appendChild(caption);
 
-    // 删除按钮：默认隐藏，进入删除模式后显示在瓶子右上角
-    var delBtn = document.createElement("div");
-    delBtn.setAttribute("class","del-btn");
-    delBtn.setAttribute("title","删除此瓶子");
-    delBtn.innerHTML = "×";
-    delBtn.setAttribute("onclick","event.stopPropagation(); removeBottle(this);");
-    block.appendChild(delBtn);
+    // 删除按钮：默认隐藏，进入删除模式后显示在瓶子右上角（二维码瓶子不创建）
+    if(!isQR){
+        var delBtn = document.createElement("div");
+        delBtn.setAttribute("class","del-btn");
+        delBtn.setAttribute("title","删除此瓶子");
+        delBtn.innerHTML = "×";
+        delBtn.setAttribute("onclick","event.stopPropagation(); removeBottle(this);");
+        block.appendChild(delBtn);
+    }else{
+        block.classList.add("qr-block");
+    }
 
     return block;
 }
@@ -93,6 +104,8 @@ function renderBottles(){
         bottleCount++;
         grid.appendChild(block);
     }
+    // 最后追加"二维码瓶子"（固定最后一个，不参与编号、无删除按钮）
+    grid.appendChild(createBottle("扫码填写", "qrsurface", true));
 }
 
 function addBottles(){
@@ -126,7 +139,14 @@ function confirmAddBottle(){
     var id = "surface" + bottleCount;
     var block = createBottle(xp, id);
     bottleCount++;
-    document.getElementById("nl_tbody").appendChild(block);
+    // 新增瓶子插入到二维码瓶子之前，保证二维码始终是最后一个
+    var grid = document.getElementById("nl_tbody");
+    var qrBlock = grid.querySelector(".qr-block");
+    if(qrBlock){
+        grid.insertBefore(block, qrBlock);
+    }else{
+        grid.appendChild(block);
+    }
     if(deleteMode){
         block.querySelector(".del-btn").style.display = "flex";
     }
@@ -160,8 +180,8 @@ function toggleDelete(){
 function removeBottle(delBtn){
     var block = delBtn.closest(".block");
     block.remove();
-    // 若没有瓶子了，自动退出删除模式
-    if(document.querySelectorAll(".block").length === 0){
+    // 若没有可删除的普通瓶子了（二维码瓶子不算），自动退出删除模式
+    if(document.querySelectorAll(".block:not(.qr-block)").length === 0){
         deleteMode = false;
         var btn = document.getElementById("delBtn");
         btn.innerText = "删除瓶子";

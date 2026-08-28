@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="湿热XP瓶子生成器 By ML">
+        <meta name="description" content="点点屏幕，即可生成属于自己的湿热XP性癖瓶子图！">
+        <title>湿热XP瓶子生成器 By ML</title>
+        <!-- Bootstrap 5 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="./css/main.css" type="text/css" rel="stylesheet">
+        <link href="./font/katong/result.css" type="text/css" rel="stylesheet">
+        <!-- Coloris 调色板 CSS -->
+        <link href="./css/coloris.min.css" type="text/css" rel="stylesheet">
+    </head>
+    <body class="cn">
+        <div id="loadingblock" class="d-flex align-items-center justify-content-center">
+            <div id="loadinghint" class="text-center" style="position:static;top:0;">
+                <div class="spinner-border text-light mb-3" style="width:3rem;height:3rem;" role="status"></div>
+                <div class="text-light fs-4">正在加载中，请稍后。。。。</div>
+            </div>
+        </div>
+
+        <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer"></div>
+
+        <div class="container my-4">
+            <!-- 标题 -->
+            <div class="text-center display-5 fw-bold mb-4">
+                湿热XP瓶子生成器 By ML
+            </div>
+
+            <!-- 语言切换 
+            <div class="row justify-content-center mb-4">
+                <div class="col-auto">
+                    <div class="lang cn" onclick="switchto('index');">
+                        中文
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="lang jp" onclick="switchto('indexjp');">
+                        日本語
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- 使用注意事项 -->
+            <div class="card border-3 border-dark mt-4">
+                <div class="card-body fs-5">
+                    <span>使用注意事项：</span><br>
+                    1. 点击选择喜欢的颜色<br>
+                    2. 点击瓶子，进行涂色<br>
+                    3. 可以自由增加/删除瓶子<br>
+                    4. 点击生成图片，即可下载！
+                </div>
+            </div>
+
+            <!-- 自定义分区 -->
+            <div class="card border-3 border-dark mt-4">
+                <div class="card-body">
+                    <!-- 分区选择与下拉框合并为一行 -->
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <label for="partSelect" class="fs-4 mb-0 text-nowrap">选择分区：</label>
+                        <select id="partSelect" class="form-select flex-grow-1" onchange="switchto(this.value);">
+                            <option value="7" selected>尿恋区</option>
+                            <option value="85">AB|DL区</option>
+                            <option value="87">裤兜区</option>
+                        </select>
+                    </div>
+                    <div class="fs-4 mb-2 gap-2">
+                        <span>颜色选择：</span>
+                    </div>
+                    <div id="colorlist_tbody" class="color-grid gap-2">
+
+                    </div>
+                    <div class="fs-4 mb-2 gap-2">
+                        <span>你的名字：</span>
+                    </div>
+                    <div class="mb-3 gap-2">
+                        <input type="text" id="nameInput" class="form-control" placeholder="输入你的名字~" oninput="updateName()">
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-primary flex-fill" onclick="addBottle()">增加瓶子</button>
+                        <button class="btn btn-danger flex-fill" id="delBtn" onclick="toggleDelete()">删除瓶子</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 瓶子生成区 -->
+            <div class="card border-3 border-dark mt-4">
+                <div class="card-body" id="img">
+                    <div id="xpTitle" class="text-center fs-1 fw-bold mb-3">我的xp瓶子</div>
+                    <div class="text-end px-3 pb-2">
+                        <span class="text-secondary fs-6 gap-2">生成器作者：Memory_Leak</span>
+                    </div>
+                    <div id="nl_tbody" class="nl-grid">
+
+                    </div>
+                <!-- 右下角作者署名（位于 #img 截图区域之外，避免进入生成的图片） -->
+                </div>
+            </div>
+
+            <!-- 生成图片按钮（位于瓶子区下方） -->
+            <div class="text-center mt-4">
+                <button id="downloadBtn" class="btn btn-primary btn-lg px-5" style="height:auto;width:auto;" onclick="screenshot()">生成图片！</button>
+            </div>
+
+            <!-- 论坛主页链接 -->
+            <div class="text-center mt-4">
+                <a href="https://www.shireyishunjian.com/main/home.php?mod=space&uid=363505" target="_blank" class="link-dark fs-5 fw-bold">ML的论坛主页（点此进入）</a>
+            </div>
+        </div>
+
+        <!-- 增加瓶子对话框 -->
+        <div class="modal fade" id="addBottleModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">增加瓶子</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <label for="newBottleInput" class="form-label">输入新瓶子的字幕：</label>
+                        <input type="text" id="newBottleInput" class="form-control" placeholder="例如：连裤袜" value="连裤袜">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary" onclick="confirmAddBottle()">确认</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="./js/coloris.min.js"></script>
+        <script type="text/javascript" src="./js/main.js"></script>
+        <script type="text/javascript" src="./js/html2canvas.min.js"></script>
+        <!-- Bootstrap 5 JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

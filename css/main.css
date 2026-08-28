@@ -1,0 +1,328 @@
+@font-face {
+    font-family: Comic-SanS;
+    src: url("../font/comic.woff2");
+    font-display: swap;
+}       
+
+@font-face {
+    font-family: Katongjp;
+    src: url("../font/ZenMaruGothic-Medium.ttf");
+} 
+body{
+    position: relative;
+    background-color: white;
+}
+.jp{
+    font-family: Comic-Sans, Katongjp;
+}
+.cn{
+    font-family: Comic-Sans, 迷你简卡通;
+}
+.lang{
+    width: 6.25rem;
+    height: 1.875rem;
+    text-align: center;
+    line-height: 1.875rem;
+    background-color: whitesmoke;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: black;
+    border-style: solid;
+    border-width: 0.125rem;
+    border-radius: 0.375rem;
+    border-color: black;
+    margin: auto;
+}
+h1{
+    text-align: center;
+}
+
+#nl_table{
+    
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+}
+
+.caption{
+    /* 用容器查询单位，让字体随瓶子缩放：
+       瓶子列宽 = 100cqw，3 个汉字（≈3×30cqw=90cqw）始终放得下 */
+    position: static;
+    width: 100cqw;
+    text-align: center;
+    font-size: 24.5cqw;
+    line-height: normal;
+    margin-top: 0.125rem;
+    background-color: transparent;
+}
+/* 瓶子在网格中按比例缩放：一行恰好 6 个 */
+.nl-grid{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+    gap: 0.5rem;
+    margin: 0 0.25rem;
+}
+.block{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* 以 .block 为容器查询基准，使 caption 字体可随瓶子宽度缩放 */
+    container-type: inline-size;
+}
+/* 瓶子容器：宽高由瓶子图片决定，液体以此为定位基准 */
+.bottle-wrap{
+    position: relative;
+    width: 100%;
+    flex: none;
+}
+.bottle, #bottle{
+    z-index: 10;
+    width: 100%;
+    height: auto;
+}
+/* 生成的瓶子图片置于文档流内（relative 使 z-index 生效），
+   让 .bottle-wrap 跟随其高度，并让瓶子渲染在液体之上 */
+.bottle-wrap .bottle{
+    position: relative;
+    display: block;
+}
+
+.card{
+    border-width: 0.3rem;
+}
+
+/* 删除模式下的红色删除按钮（显示在瓶子右上角） */
+.del-btn{
+    position: absolute;
+    top: 0.125rem;
+    right: 0.125rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border-color: black;
+    background-color: #dc3545;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* 用 flex 使 × 精确居中，避免 line-height 造成的偏移 */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 20;
+    user-select: none;
+}
+.del-btn:hover{
+    background-color: #bb2d3b;
+}
+
+.surface{
+    position: absolute;
+    bottom:0.0625rem;
+    left: 0.0625rem;
+    height: 0%;
+    width: 95%;
+    z-index: 1;
+    background-color: lightskyblue;
+    transition: height 0.6s ease;
+    overflow: hidden;
+}
+
+#img{
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}
+/* 背景水印：斜铺覆盖瓶子区，透明度 30% */
+.watermark{
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-repeat: repeat;
+    background-size: 48rem 36rem;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='150'><text x='50%' y='50%' fill='black' fill-opacity='0.1' font-size='48' font-family='Arial' font-weight='bold' text-anchor='middle' transform='rotate(-30,120,75)'>Memory_Leak</text></svg>");
+}
+/* 让标题与瓶子网格浮于水印之上 */
+#img #xpTitle,
+#img .nl-grid{
+    position: relative;
+    z-index: 1;
+}
+
+#st{
+    position: relative;
+    top:2.5rem;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+.tablebox{
+    position: relative;
+    border-spacing: 1.25rem;
+    height: 3.125rem;
+}
+
+.color-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 2.1rem);
+    justify-content: center;
+    gap: 0.625rem;
+}
+
+.colorbox{
+    height: 2rem;
+    width: 2rem;
+    border: 0.1rem;
+    border-color: gray;
+    border-style: solid;
+    border-radius: 0.625rem;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.colorbox:hover{
+    transform: scale(1.08);
+    box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.3);
+}
+.color-active{
+    box-shadow: 0 0 0 0.1875rem #0d6efd !important;
+    transform: scale(1.08);
+}
+/* 自定义颜色块：彩虹渐变背景 + 加号 */
+.color-custom{
+    position: relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-image: linear-gradient(135deg,
+        #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #8b00ff);
+}
+/* 透明覆盖的 Coloris 触发器 input */
+.clr-coloris-input{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+}
+.color-custom-plus{
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.6);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    z-index: 1;
+}
+.color-custom.color-active{
+    /* 选中的自定义颜色以实际选择的颜色覆盖显示 */
+    background-image: none;
+}
+
+#loadingblock{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: grey;
+    z-index: 2000;
+}
+
+#loadinghint{
+    position: absolute;
+    top: 20%;
+    opacity: 100%;
+    font-size: 3.125rem;
+}
+
+#btnList{
+    width: 100%;
+    position: relative;
+}
+
+#downloadBtn{
+    height:18.75rem;
+    width: 100%;
+    font-size:2rem;
+    border-style: solid;
+    border-width: 0.1875rem;
+    border-radius: 1.875rem;
+    border-color: gray;
+}
+
+.ct{
+    position: relative;
+    top:1.25rem;
+    margin-top: 1.25rem;
+    width: 100%;
+    border-style: solid;
+    border-width: 0.3125rem;
+    border-radius: 0.625rem;
+    border-color: black;
+}
+
+#cthint{
+    margin:0.625rem;
+    font-size: 2rem;
+}
+#ctotherhint{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin:0.625rem;
+    width:100%;
+    text-align: center;
+}
+.title{
+    position: relative;
+    top: 1.25rem;
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: black;
+}
+
+.xps{
+    width: 12.5rem;
+    height: 12.5rem;
+    text-align: center;
+    line-height: 12.5rem;
+    background-color: whitesmoke;
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: black;
+    border-style: solid;
+    border-width: 0.3125rem;
+    border-radius: 0.625rem;
+    border-color: black;
+    margin: auto;
+}
+.other_xp{
+    width: 3.75rem;
+    height: 1.5rem;
+    text-align: center;
+    line-height: 1.5rem;
+    background-color: whitesmoke;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: black;
+    border-style: solid;
+    border-width: 0.125rem;
+    border-radius: 0.375rem;
+    border-color: black;
+    margin: auto;
+}
+h2{
+    text-align: right;
+    margin-right: 5%;
+}

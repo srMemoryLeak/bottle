@@ -1,0 +1,10 @@
+numTables 14
+dir offset n/a
+tables keys ['OS/2', 'cmap', 'glyf', 'head', 'hhea', 'hmtx', 'loca', 'maxp', 'name', 'post', 'GSUB', 'prep', 'vhea', 'vmtx']
+cmap entry SFNTDirectoryEntry
+cmap offset 324 length 29188
+cmap first 16 bytes 00000001000300010000000c000471f8
+numTables(blob) 1
+enc0 3 1 suboff 12
+subtable fmt 4 declaredLen 29176
+subtable first 8 000471f800001c7a
